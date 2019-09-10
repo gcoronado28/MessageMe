@@ -7,4 +7,12 @@ RSpec.describe Message, type: :model do
       expect(association).to eq :belongs_to
     end
   end
+
+  context 'invalid instances' do
+    it 'has a blank body' do
+      msg = create(:message)
+      msg.body = ''
+      expect(msg).to_not be_valid
+    end
+  end
 end
