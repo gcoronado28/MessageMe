@@ -6,8 +6,7 @@ RSpec.feature 'Send messages' do
     signin_as user
     msg = create(:message, user: user)
     fill_in 'message_body', with: msg.body
-    expect { click_button('button') }
-            .to change(Message, :count).by(1)
+    expect { click_button('button') }.to change(Message, :count).by(1)
     expect(page).to have_text(msg.user.username)
     expect(page).to have_text(msg.body)
   end
