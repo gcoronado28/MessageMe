@@ -40,9 +40,6 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  # This configuration allows us to use devise methods inside capybara tests
-  config.include Devise::Test::IntegrationHelpers, type: :feature
-
   # This configuration allows us to use factory_bot gem’s methods
   config.include FactoryBot::Syntax::Methods
 
